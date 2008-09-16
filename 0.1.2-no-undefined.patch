@@ -1,0 +1,28 @@
+--- origsrc/libtiger-0.1.2/Makefile.am	2008-09-01 12:48:54.000000000 -0500
++++ src/libtiger-0.1.2/Makefile.am	2008-09-16 03:30:01.181007400 -0500
+@@ -17,9 +17,9 @@
+ noinst_HEADERS=\
+   src/tiger_internal.h
+ 
+-lib_libtiger_la_CFLAGS=@CWARNFLAGS_FULL@ @PANGO_CFLAGS@ @CAIRO_CFLAGS@
+-lib_libtiger_la_LIBADD=@PANGO_LIBS@ @CAIRO_LIBS@
+-lib_libtiger_la_LDFLAGS=-version-info @LIBTIGER_SHARED_VERSION@ --no-undefined
++lib_libtiger_la_CFLAGS=@CWARNFLAGS_FULL@ @PANGOCAIRO_CFLAGS@ @KATE_CFLAGS@
++lib_libtiger_la_LIBADD=@PANGOCAIRO_LIBS@ @KATE_LIBS@
++lib_libtiger_la_LDFLAGS=-version-info @LIBTIGER_SHARED_VERSION@ -no-undefined
+ 
+ am__tar = ${AMTAR} chof - --owner=0 --group=0 --exclude=CVS --exclude=.cvsignore "$$tardir"
+ 
+--- origsrc/libtiger-0.1.2/configure.ac	2008-08-31 16:55:30.000000000 -0500
++++ src/libtiger-0.1.2/configure.ac	2008-09-16 03:29:39.087218000 -0500
+@@ -66,8 +66,8 @@
+ 
+ if test "x$HAVE_PKG_CONFIG" = "xyes"
+ then
+-  PKG_CHECK_MODULES(PANGO,pango)
+-  PKG_CHECK_MODULES(CAIRO,cairo)
++  PKG_CHECK_MODULES(PANGOCAIRO,pangocairo)
++  PKG_CHECK_MODULES(KATE,kate)
+ else
+   AC_CHECK_LIB(pango,pango_version)
+   AC_CHECK_HEADER([pango/pango.h])
