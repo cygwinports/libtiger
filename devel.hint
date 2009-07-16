@@ -1,0 +1,6 @@
+category: Audio
+requires: libtiger5 libcairo-devel libglib2.0-devel libkate-devel libpango1.0-devel
+external-source: libtiger
+sdesc: "OggKate rendering library (development)"
+ldesc: "libtiger is a rendering library for OggKate streams using Pango 
+and Cairo."

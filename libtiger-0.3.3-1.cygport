@@ -1,0 +1,10 @@
+DESCRIPTION="Kate text encapulation rendering library"
+HOMEPAGE="http://wiki.xiph.org/index.php/OggKate"
+SRC_URI="http://libtiger.googlecode.com/files/${P}.tar.gz"
+
+PKG_NAMES="${PN} ${PN}5 ${PN}-devel"
+PKG_HINTS="setup dll devel"
+libtiger5_CONTENTS="--exclude=html usr/bin/*-5.dll usr/share/doc/"
+libtiger_devel_CONTENTS="usr/include/ usr/lib/ usr/share/doc/${PN}/html/"
+
+DISTCLEANFILES="doc/Makefile doc/tiger.doxygen"
