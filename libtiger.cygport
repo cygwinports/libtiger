@@ -1,0 +1,17 @@
+NAME="libtiger"
+VERSION=0.3.4
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="OggKate rendering library"
+DESCRIPTION="libtiger is a rendering library for OggKate streams using Pango
+and Cairo."
+HOMEPAGE="http://wiki.xiph.org/index.php/OggKate"
+SRC_URI="http://libtiger.googlecode.com/files/libtiger-${VERSION}.tar.gz"
+
+PKG_NAMES="${NAME}5 ${NAME}-devel ${NAME}-doc"
+libtiger5_CONTENTS="--exclude=html usr/bin/*-5.dll usr/share/doc/"
+libtiger_devel_CONTENTS="usr/include/ usr/lib/"
+libtiger_doc_CATEGORY="Doc"
+libtiger_doc_CONTENTS="usr/share/doc/${NAME}/html/"
+
+DISTCLEANFILES="doc/Makefile doc/tiger.doxygen"
